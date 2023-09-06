@@ -12,9 +12,8 @@ use Spatie\Permission\Models\Role;
 
 class RolesSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    protected $priority = 5;
+
     public function run(): void
     {
 

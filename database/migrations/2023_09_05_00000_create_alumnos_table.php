@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id(); /// id es matricula , se pude cambiarle matricula o agregar
-            $table->string('matricula');
+            $table->string('matricula')->unique();
+            $table->string('correo')->unique();;
             $table->string('nombre');
             $table->string('semestre');
             $table->string('grupo');

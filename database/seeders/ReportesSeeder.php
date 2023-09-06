@@ -9,6 +9,8 @@ use Illuminate\Database\Seeder;
 
 class ReportesSeeder extends Seeder
 {
+     protected $priority = 3;
+
     /**
      * Run the database seeds.
      */

@@ -9,6 +9,7 @@ use App\Models\Permiso;
 
 class PermisoSeeder extends Seeder
 {
+    protected $priority = 4;
 
     public function run(): void
     {

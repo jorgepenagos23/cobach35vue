@@ -7,13 +7,12 @@ use Illuminate\Database\Seeder;
 use App\Models\Publicaciones;
 class PublicacionesSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    protected $priority = 7;
+
     public function run(): void
     {
         $publicacion = new Publicaciones();
-        $publicacion->usuario_id = '19';
+        $publicacion->usuario_id = '1';
         $publicacion->nombre = "Publicación 1";
         $publicacion->fecha = now(); // Fecha actual
         $publicacion->save();

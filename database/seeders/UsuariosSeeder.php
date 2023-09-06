@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 
 class UsuariosSeeder extends Seeder
 {
+    protected $priority = 2;
+
     /**
      * Run the database seeds.
      */

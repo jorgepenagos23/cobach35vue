@@ -7,36 +7,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
-class Alumno extends Authenticatable
+class alumnos_reportes extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $table = 'alumnos';
+    protected $table = 'alumno_reportes';
 
     protected $fillable = [
 
         'id',
-        'correo',
-        'nombre',
-        'matricula',
-        'semestre',
-        'grupo',
-        'telefono',
-        'tutor_nombre',
-        'tutor_telefono',
-        'foto',
+        'descripcion',
+        'fecha',
+        'usuario_id',
+        'reporte_id'
 
     ];
 
         //pendiente agregar relacion con boletas
 
     //agregar  la relacion de alumno con reportes
-
-    public function Reportes()
-    {
-        return $this->hasMany(Reporte::class);
-    }
-
-
 
 
 }
