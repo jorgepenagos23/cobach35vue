@@ -15,7 +15,7 @@ class UsuariosHasRolesSeeder extends Seeder
     {
         // Usuario 1 tiene el rol 1 (ejemplo)
         $usuarioRol = new usuarios_has_roles();
-        $usuarioRol->usuario_id = 1; // Reemplaza con el ID del usuario al que deseas asignar el rol
+        $usuarioRol->usuario_id = 1; // director
         $usuarioRol->rol_id = 1; // Reemplaza con el ID del rol que deseas asignar
         $usuarioRol->save();
 
@@ -23,8 +23,14 @@ class UsuariosHasRolesSeeder extends Seeder
 
         // Usuario 2 tiene el rol 2 (ejemplo)
         $usuarioRol = new usuarios_has_roles();
-        $usuarioRol->usuario_id = 2; // Reemplaza con el ID del usuario
-        $usuarioRol->rol_id = 2; // Reemplaza con el ID del rol
+        $usuarioRol->usuario_id = 2; //
+        $usuarioRol->rol_id = 2; //
         $usuarioRol->save();
+
+         // Usuario 2 tiene el rol 2 (ejemplo)
+         $usuarioRol = new usuarios_has_roles();
+         $usuarioRol->usuario_id = 3; //  penagos
+         $usuarioRol->rol_id = 3; // adminastrador
+         $usuarioRol->save();
     }
 }

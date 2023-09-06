@@ -13,7 +13,7 @@ class PublicacionesSeeder extends Seeder
     public function run(): void
     {
         $publicacion = new Publicaciones();
-        $publicacion->usuario_id = '2';
+        $publicacion->usuario_id = '19';
         $publicacion->nombre = "Publicación 1";
         $publicacion->fecha = now(); // Fecha actual
         $publicacion->save();

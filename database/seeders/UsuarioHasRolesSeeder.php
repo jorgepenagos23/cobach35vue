@@ -1,5 +1,5 @@
 <?php
-
+///ESTE NO SIRVE
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -12,6 +12,9 @@ class UsuarioHasRolesSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+
+
+
     }
 }
