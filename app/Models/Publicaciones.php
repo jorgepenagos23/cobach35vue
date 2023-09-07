@@ -22,7 +22,10 @@ class Publicaciones extends Authenticatable
 
     ];
 
-    //agregar  la relacion
+    public function Publicaciones()
+    {
+        return $this->belongsTo(usuarios_has_roles::class);
+    }
 
 
 }

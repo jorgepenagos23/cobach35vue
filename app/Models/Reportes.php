@@ -20,7 +20,14 @@ class Reportes extends Authenticatable
 
     ];
 
-    //agregar  la relacion
+    //agregar  la relacion  uno a muchos
+    public function Reportes()
+    {
+
+        return $this->hasMany(Reportes::class);
+    }
+
+
 
 
 }

@@ -24,7 +24,12 @@ class alumnos_reportes extends Authenticatable
 
         //pendiente agregar relacion con boletas
 
-    //agregar  la relacion de alumno con reportes
+
+        public function Reportes()
+        {
+            return $this->belongsTo(Reporte::class, 'reporte_id');
+        }
+
 
 
 }
