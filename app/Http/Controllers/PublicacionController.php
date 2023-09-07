@@ -13,7 +13,10 @@ class PublicacionController extends Controller
      */
     public function index()
     {
-        //
+        $publicaciones = Publicacion::all(); // Esto es un ejemplo; reemplázalo con la lógica adecuada
+
+        // Luego, puedes retornar la vista "publicaciones" con los datos necesarios
+        return view('publicaciones', ['publicaciones' => $publicaciones]);
     }
 
     /**
