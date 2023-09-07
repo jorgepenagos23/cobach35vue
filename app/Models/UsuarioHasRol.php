@@ -6,24 +6,32 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
+
 use Illuminate\Notifications\Notifiable;
-class Roles extends Authenticatable
+class UsuarioHasRol extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $table = 'roles_tabla';
+    protected $table = 'usuarios_has_roles';
 
     protected $fillable = [
 
         'id',
-        'name',
-        'guard_nombre',
+        'usuario_id',
+        'matricula',
+        'rol_id'
 
 
     ];
 
-        //pendiente agregar
+    //agregar  la relacion de usuario con la publicacion
 
-    //agregar relacion con usuario  has roles
+    public function Publicaciones()
+{
+    return $this->hasMany(Publicacion::class);
+}
+
+
+
 
 
 }

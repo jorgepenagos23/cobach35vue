@@ -39,4 +39,5 @@ class Alumno extends Authenticatable
 
 
 
+
 }
