@@ -13,17 +13,24 @@ class Alumno extends Authenticatable
     protected $table = 'alumnos';
 
     protected $fillable = [
+        'clacentro'     ,
+        'nombreplan'   ,
+        'clavemuni'     ,
+        'clavelocal'    ,
+        'matricula'     ,
+        'nombres'       ,
+        'papellido'  ,
+        'sapellido'     ,
+        'curp'         ,
+        'telcasa'      ,
+        'nacionalidad'  ,
+        'foliosec'      ,
+        'correo'       ,
+        'celular'        ,
+        'grado'         ,
+        'grupo'         ,
+        'estatus'       ,
 
-        'id',
-        'correo',
-        'nombre',
-        'matricula',
-        'semestre',
-        'grupo',
-        'telefono',
-        'tutor_nombre',
-        'tutor_telefono',
-        'foto',
 
     ];
 
