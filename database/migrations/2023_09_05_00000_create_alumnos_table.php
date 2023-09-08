@@ -13,16 +13,24 @@ return new class extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id(); /// id es matricula , se pude cambiarle matricula o agregar
+            $table->string('clacentro');
+            $table->string('nombreplan');
+            $table->string('clavemuni');
+            $table->string('clavelocal');
             $table->string('matricula')->unique();
             $table->string('correo')->unique();;
-            $table->string('nombre');
-            $table->string('semestre');
+            $table->string('nombres');
+            $table->string('papellido');
+            $table->string('sapellido');
+            $table->string('curp');
+            $table->string('telcasa');
+            $table->string('nacionalidad');
+            $table->string('foliosec');
+            $table->string('grado');
             $table->string('grupo');
             $table->string('estatus');
-            $table->string('telefono');
-            $table->string('tutor_nombre');
-            $table->string('tutor_telefono');
-            $table->string('foto');
+            $table->string('celular');
+
             $table->timestamps();
         });
     }

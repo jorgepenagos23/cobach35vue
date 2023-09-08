@@ -5,20 +5,33 @@ namespace App\Http\Controllers;
 use App\Models\Alumno;
 use App\Http\Requests\StoreAlumnoRequest;
 use App\Http\Requests\UpdateAlumnoRequest;
+use Illuminate\Http\Request;
+use App\Imports\AlumnoImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AlumnoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+
     public function index()
     {
-        //
+        $alumno = Alumno::get();
+
+        return view('alumno.alumno',['alumnos'=>$alumno]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
+    public function import(Request $request){
+
+        $request->validate([
+        'excel_file' =>'required|mimes::xls,xlsx,csv'
+
+        ]);
+        Excel::import(new AlumnoImport, $request->file('excel_file')); ///mandamos el archivo a importar
+        return redirect()->back()->with('success', 'Importado todo bien !');
+
+    }
+
     public function create()
     {
         //
