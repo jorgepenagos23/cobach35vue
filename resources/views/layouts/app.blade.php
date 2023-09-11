@@ -7,7 +7,7 @@
 
     <title>Login COBACH </title>
     <!-- Agrega el enlace al archivo CSS compilado de Tailwind CSS -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>

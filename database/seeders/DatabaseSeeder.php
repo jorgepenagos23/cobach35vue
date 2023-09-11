@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Alumno;
+use App\Models\Seccion;
 use App\Models\AlumnoReporte;
 use App\Models\Usuario;
 use App\Models\Reporte;
@@ -245,6 +246,48 @@ class DatabaseSeeder extends Seeder
         $reportealumno->usuario_id ='2';
         $reportealumno->reporte_id ='1';
         $reportealumno->save();
+
+        $seccion = new Seccion();
+        $seccion->orden_presentacion = 1;
+        $seccion->nombre = 'Inicio ';
+        $seccion->visible = true;
+        $seccion->seccion_id = 1; // Asignar el ID de la sección padre
+        $seccion->objetivo = 'Este es el contenido de la Sección 1';
+        $seccion->tipo = 'contenido';
+        $seccion->save();
+
+
+
+        $seccion = new Seccion();
+        $seccion->orden_presentacion = 2;
+        $seccion->nombre = 'Noticias ';
+        $seccion->visible = true;
+        $seccion->seccion_id = 1; // Asignar el ID de la sección padre
+        $seccion->objetivo = 'Este es el contenido de la Sección 2';
+        $seccion->tipo = 'contenido';
+        $seccion->save();
+
+
+        $seccion = new Seccion();
+        $seccion->orden_presentacion = 3;
+        $seccion->nombre = 'Alumnos ';
+        $seccion->visible = true;
+        $seccion->seccion_id = 1; // Asignar el ID de la sección padre
+        $seccion->objetivo = 'Este es el contenido de la Sección 3 ';
+        $seccion->tipo = 'contenido';
+        $seccion->save();
+
+        $seccion = new Seccion();
+
+        $seccion->nombre = 'Cuadro de Honor ';
+        $seccion->visible = true;
+        $seccion->seccion_id = 3; // Asignar el ID de la sección padre
+        $seccion->objetivo = 'Cuadro de Honor QUINTO GRADO  ';
+        $seccion->tipo = 'contenido';
+        $seccion->save();
+
+
+
 
 
     }

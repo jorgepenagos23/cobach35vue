@@ -34,12 +34,27 @@ return [
     | Supported: "session"
     |
     */
-
     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'guard_gerentes' => [
+            'driver' => 'session',
+            'provider' => 'providers_gerentes',
+        ],
+        'guard_clientes' => [
+            'driver' => 'session',
+            'provider' => 'providers_clientes',
+        ],
+
+
+
+        'api' => [
+            'driver' => 'basic',
+            'provider' => 'users',
+        ],
+
     ],
 
     /*
@@ -62,13 +77,13 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Usuario::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'provider_usuario' => [
+             'driver' => 'eloquent',
+             'model' => App\Models\Usuario::class,
+            ],
     ],
 
     /*

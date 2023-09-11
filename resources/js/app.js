@@ -5,6 +5,7 @@ import { createApp } from "vue"
 import App from "../src/App.vue"
 import login from "../src/login.vue"
 import inicio from "../src/inicio.vue"
+import dashboard from "../src/dashboard.vue"
 
 // Crea y monta la aplicación principal en #app
 const app = createApp(App);
@@ -18,3 +19,10 @@ loginApp.mount("#login");
 // Crea y monta la aplicación de inicio de sesión en #login
 const index = createApp(inicio); // Cambiar "Login" a "login" aquí
 loginApp.mount("#inicio");
+
+
+
+
+
+const dashApp = createApp(dashboard);
+dashApp.mount("#dashboard")

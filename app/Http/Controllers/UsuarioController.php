@@ -5,15 +5,56 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use App\Http\Requests\StoreUsuarioRequest;
 use App\Http\Requests\UpdateUsuarioRequest;
+use App\Models\Alumno;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
 
 class UsuarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+    public function authenticate(Request $request)
+    {
+        // Crear una cookie con el identificador de sesión del usuario
+        $credentials = $request->only('correo',  'password');
+
+        if (Auth::guard('web')->attempt($credentials)) {
+            // Autenticación exitosa para el cliente
+            return response()->json([
+                'message' => 'Inicio de sesión exitoso',
+                'redirect' => route('dashboard'),
+            ], 200);
+
+
+
+        }
+        // Credenciales inválidas
+        return response()->json(['message' => 'Credenciales inválidas'], 401);
+    }
+
+
+    public function dashboard()
+    {
+        return view('sistema.dashboard');
+    }
+
+
+
+
+
+    public function login()
+    {
+        return view('login');
+    }
+
+
+
     public function index()
     {
-        //
+        $alumno = Alumno::get();
+
+        return view('alumno.alumno',['alumnos'=>$alumno]);
+
     }
 
     /**
