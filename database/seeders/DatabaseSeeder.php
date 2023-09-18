@@ -283,7 +283,7 @@ class DatabaseSeeder extends Seeder
         $seccion->visible = true;
         $seccion->seccion_id = 3; // Asignar el ID de la sección padre
         $seccion->objetivo = 'Cuadro de Honor QUINTO GRADO  ';
-        $seccion->tipo = 'contenido';
+        $seccion->tipo = 'subseccion';
         $seccion->save();
 
 

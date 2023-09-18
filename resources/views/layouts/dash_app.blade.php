@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Login COBACH </title>
+    <title> para dash</title>
     <!-- Agrega el enlace al archivo CSS compilado de Tailwind CSS -->
-    <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('resources/css/dashboard.css') }}" rel="stylesheet">
 </head>
-
 
 <body>
 

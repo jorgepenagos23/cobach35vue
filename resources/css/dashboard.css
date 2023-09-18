@@ -1,0 +1,39 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+
+/* estilos.css */
+.logo-login{
+    width: 60px;
+    height: 60px;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    table {
+        width: 100%;
+    }
+}

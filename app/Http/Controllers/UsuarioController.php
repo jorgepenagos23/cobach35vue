@@ -22,8 +22,7 @@ class UsuarioController extends Controller
             // Autenticación exitosa para el cliente
             return response()->json([
                 'message' => 'Inicio de sesión exitoso',
-                'redirect' => route('dashboard'),
-            ], 200);
+                'redirect' => route('dashboard'), ], 200);
 
 
 
@@ -39,7 +38,11 @@ class UsuarioController extends Controller
     }
 
 
-
+    public function cerrar_sesion()
+    {
+        Auth::logout();
+        return redirect('login');
+    }
 
 
     public function login()

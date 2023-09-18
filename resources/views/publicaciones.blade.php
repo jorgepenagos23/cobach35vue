@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dash_app')
 @include('banner');
 
 <!DOCTYPE html>

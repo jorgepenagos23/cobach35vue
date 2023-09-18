@@ -1,21 +1,87 @@
 <template>
-   <div class="container mx-auto">
-            <div class="bg-gradient-to-br from-blue-900 to-gray-600 text-white text-center py-10 px-20 rounded-lg shadow-md relative">
-                <img src="../imagenes/logo2.jpg" class="w-20 mx-auto mb-4 rounded-lg">
+<header class="bg-white dark:bg-gray-800">
 
-                <h3 class="text-7xl font-break-words font-heading  leading-10 tracking-tight ">ANUNCIO BANNER</h3>
-                <div class="flex items-center space-x-2 mb-6">
-                    <span id="cpnCode" class="border-dashed border text-white px-4 py-2 rounded-l">Regreso a Clases </span>
-                    <span id="cpnBtn" class="border border-white bg-white text-purple-600 px-4 py-2 rounded-r cursor-pointer">TEXTO 2</span>
+
+    <div class="container flex flex-col px-6 py-4 mx-auto space-y-6 md:h-128 md:py-16 md:flex-row md:items-center md:space-x-6">
+        <div class="flex flex-col items-center w-full md:flex-row md:w-1/2">
+            <div class="flex justify-center order-2 mt-6 md:mt-0 md:space-y-3 md:flex-col">
+                <button class="w-3 h-3 mx-2 bg-blue-500 rounded-full md:mx-0 focus:outline-none"></button>
+                <button class="w-3 h-3 mx-2 bg-gray-300 rounded-full md:mx-0 focus:outline-none hover:bg-blue-500"></button>
+                <button class="w-3 h-3 mx-2 bg-gray-300 rounded-full md:mx-0 focus:outline-none hover:bg-blue-500"></button>
+                <button class="w-3 h-3 mx-2 bg-gray-300 rounded-full md:mx-0 focus:outline-none hover:bg-blue-500"></button>
+            </div>
+
+            <div class="max-w-lg md:mx-12 md:order-2">
+                <h1 class="text-3xl font-medium tracking-wide text-gray-800 dark:text-white md:text-4xl">BANNER</h1>
+                <p class="mt-4 text-gray-600 dark:text-gray-300">Espacio para publicaciones y Anuncios Oficiales de la Institucion</p>
+                <div class="mt-6">
+                    <a href="#" class="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md md:inline hover:bg-blue-400">DESCARGA</a>
                 </div>
-                <p class="text-sm">TEXTO 3</p>
-
-            <div class="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 left-0 -ml-6"></div>
-            <div class="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 right-0 -mr-6"></div>
-
             </div>
         </div>
 
+        <div class="hero bg-gray-200 text-center grid md:grid-cols-2 border w-4/6 m-auto p-8 bg-opacity-90 rounded-lg">
+                                    <img class="icon m-auto rounded-lg" src="http://35tuxtlanorte.edu.mx/images/portfolio/02.jpg" alt="" />
+                                    <div class="text m-auto text-lg md:ml-5 p-5 md:text-left">
+                                        <div class="head text-3xl mb-3 font-semibold">INSCRIPCIONES ABIERTAS</div>
+                                        <div class="desc">There's a reason pizza is so popular. Humans are drawn to foods that are fatty, sweet, rich and complex. Pizza has all of these components. Cheese is fatty, meat toppings tend to be rich and the sauce is sweet.</div>
+                                    </div>
+                                    </div>
+    </div>
+</header>
+
+<div class="flex flex-col bg-blue-200 m-auto p-auto">
+<h1
+        class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800" >
+        Publicaciones
+      </h1>
+      <div
+        class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+        <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 " >
+
+
+          <div class="inline-block px-3">
+         <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+         <div>
+        <h2 class="font-medium text-gray-800 dark:text-white ">Publicacion 1 </h2>
+            <p class="text-sm font-normal text-gray-600 dark:text-gray-400">Entrada 8 PM</p>
+          </div>
+
+         <div class="inline px-3 py-1 text-sm font-normal text-gray-500 bg-gray-100 rounded-full dark:text-gray-400 gap-x-2 dark:bg-gray-800">
+          Vespertino
+        </div>
+
+
+
+
+
+     </div>
+          </div>
+          <div class="inline-block px-3">
+            <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                <div>
+                 <h4 class="text-gray-700 dark:text-gray-200">Entrega de boletas</h4>
+                  <p class="text-gray-500 dark:text-gray-400">3 Semestre B</p>
+                 </div>
+                   <div class="inline px-3 py-1 text-sm font-normal text-gray-500 bg-gray-100 rounded-full dark:text-gray-400 gap-x-2 dark:bg-gray-800">
+                     Matutino
+                     </div>
+
+
+
+            </div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ></div>
+          </div>
+
+
+
+          </div>
+        </div>
+      </div>
    <!-- component -->
 <section class="container px-4 mx-auto">
     <div class="sm:flex sm:items-center sm:justify-between">
@@ -56,7 +122,7 @@
     </div>
 
     <div class="mt-6 md:flex md:items-center md:justify-between">
-        <div class="inline-flex overflow-hidden bg-white border divide-x rounded-lg dark:bg-gray-900 rtl:flex-row-reverse dark:border-gray-700 dark:divide-gray-700">
+        <div class="inline-flex overflow-hidden bg-yellow-200 border divide-x rounded-lg dark:bg-gray-900 rtl:flex-row-reverse dark:border-gray-700 dark:divide-gray-700">
             <button class="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 bg-gray-100 sm:text-sm dark:bg-gray-800 dark:text-gray-300">
                 Todos
             </button>
@@ -118,67 +184,41 @@
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                             <tr>
-                                <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                    <div class="w-100">
-                                    <div class="rounded-xl border p-3 shadow-md bg-gradient-to-tr from-green-300 to-slate-50">
-                                        <div class="flex items-center space-x-3">
-                                            <div class="h-8 w-8 rounded-full bg-slate-400 bg-[url('https://i.pravatar.cc/32')]"></div>
-                                            <div class="text-sm font-semibold text-slate-700">Director</div>
-                                        </div>
+                        <section class="bg-white dark:bg-gray-900">
+                        <div class="container px-6 py-10 mx-auto">
+                            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">Espacio para publicaciones</h1>
 
-                                    <div class="mt-2">
-                                        <div class="mb-7 text-lg font-bold">EVALUACIONES PARCIALES 2018-B</div>
-                                        <div class="text-xs text-neutral-600">Primer Semestre B </div>
-                                        <div class="text-xs text-neutral-600">Publicacion </div>
-                                    </div>
+                            <div class="mt-8 lg:-mx-6 lg:flex lg:items-center bg-red-100" >
+                                <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="https://www.sspc.chiapas.gob.mx/mediaboletines/images/C1(1).JPG" alt="">
 
-                                    <div class="flex items-center justify-between mt-3 text-xs text-slate-500">
-                                        <div class="flex space-x-2">
-                                            <div class="flex cursor-pointer items-center transition hover:text-slate-600">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                                                </svg>
-                                                <span>Fecha de Hoy</span>
-                                            </div>
-                                            <div class="flex cursor-pointer items-center transition hover:text-slate-600">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-                                                </svg>
-                                                <span>4</span>
-                                            </div>
-                                        </div>
-                                        <div class="text-xs text-neutral-500">Hace 2 horas</div>
-                                    </div>
+                                <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
+                                    <p class="text-sm text-blue-500 uppercase">category</p>
+
+                                    <a href="#" class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
+                                       Revision de Mochilas
+                                    </a>
+
+                                    <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,
+                                        laudantium quia tempore delect
+                                    </p>
+
+                                    <a href="#" class="inline-block mt-2 text-blue-500 underline hover:text-blue-400">Read more</a>
+
+
                                 </div>
                             </div>
-
-                                </td>
-                                <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                    <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                        Matutino
+                                    <div class="mt-8 lg:-mx-6 lg:flex lg:items-center bg-red-100" >
+                                    <div class="hero bg-gray-200 text-center grid md:grid-cols-2 border w-4/6 m-auto p-8 bg-opacity-90 rounded-lg">
+                                    <img class="icon m-auto rounded-lg" src="http://35tuxtlanorte.edu.mx/images/portfolio/02.jpg" alt="" />
+                                    <div class="text m-auto text-lg md:ml-5 p-5 md:text-left">
+                                        <div class="head text-3xl mb-3 font-semibold">Why We Love Pizza ?</div>
+                                        <div class="desc">There's a reason pizza is so popular. Humans are drawn to foods that are fatty, sweet, rich and complex. Pizza has all of these components. Cheese is fatty, meat toppings tend to be rich and the sauce is sweet.</div>
                                     </div>
-                                </td>
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <div>
-                                        <h4 class="text-gray-700 dark:text-gray-200">NO FALTAR A CLASES     </h4>
-                                        <p class="text-gray-500 dark:text-gray-400"> ESTUDIAR PARA EL EXAMEN</p>
-                                        <p class="text-gray-500 dark:text-gray-400">ENTREGAR TODAS LAS TAREAS</p>
                                     </div>
-                                </td>
-
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <div class="w-48 h-1.5 bg-blue-200 overflow-hidden rounded-full">
-                                        <div class="bg-blue-500 w-2/3 h-1.5"></div>
-                                    </div>
-                                </td>
-
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <button class="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:bg-gray-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-                                        </svg>
-                                    </button>
-                                </td>
+                                </div>
+                        </div>
+                        </section>
                             </tr>
 
                             <tr>
@@ -216,39 +256,23 @@
                             </tr>
 
                             <tr>
-                                <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                    <div>
-                                        <h2 class="font-medium text-gray-800 dark:text-white ">Publicacion 2</h2>
-                                        <p class="text-sm font-normal text-gray-600 dark:text-gray-400">Descripcion</p>
+                                <section class="bg-white dark:bg-gray-900">
+                                    <div class="py-16 bg-green-100">
+                            <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+                                <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+                                    <div class="md:5/12 lg:w-5/12">
+                                    <img src="http://35tuxtlanorte.edu.mx/images/portfolio/02.jpg" alt="image" loading="lazy" width="" height="">
                                     </div>
-                                </td>
-                                <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                    <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                        Matutino
+                                    <div class="md:7/12 lg:w-6/12">
+                                    <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Nuxt development is carried out by passionate developers</h2>
+                                    <p class="mt-6 text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!</p>
+                                    <p class="mt-4 text-gray-600"> Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at? Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.</p>
                                     </div>
-                                </td>
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <div>
-                                        <h4 class="text-gray-700 dark:text-gray-200">FORMATOS DE INSCRIPCIÓN Y REINSCRIPCION</h4>
-                                        <p class="text-gray-500 dark:text-gray-400">YA PUEDES DESCARGAR LOS FORMATOS NECESARIOS AL MOMENTO DE INSCRIBIRTE</p>
-                                    </div>
-                                </td>
-
-
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <div class="w-48 h-1.5 bg-blue-200 overflow-hidden rounded-full">
-                                        <div class="bg-blue-500 w-11/12 h-1.5"></div>
-                                    </div>
-                                </td>
-
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <button class="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:bg-gray-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
+                                </div>
+                                </div>
+                                </div>
+                               </section>
+                               </tr>
 
                             <tr>
                                 <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Publicacion;
 use App\Http\Requests\StorePublicacionRequest;
 use App\Http\Requests\UpdatePublicacionRequest;
+use App\Models\Seccion;
 
 class PublicacionController extends Controller
 {
@@ -14,10 +15,20 @@ class PublicacionController extends Controller
     public function index()
     {
         $publicaciones = Publicacion::all(); // Esto es un ejemplo; reemplázalo con la lógica adecuada
-
+        $secciones = Seccion::all();
         // Luego, puedes retornar la vista "publicaciones" con los datos necesarios
-        return view('publicaciones', ['publicaciones' => $publicaciones]);
+        return view('publicaciones', ['publicaciones' => $publicaciones,'secciones' => $secciones]);
     }
+
+    public function getseccionesAPI(){
+
+        $secciones = Seccion::all(); // Obtener todas las secciones
+
+        return response()->json(['secciones' => $secciones]);
+
+        }
+
+
 
     /**
      * Show the form for creating a new resource.

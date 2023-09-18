@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('seccion_id')->nullable()->default(NULL);
             $table->foreign("seccion_id", "fk_subseccion")->on("secciones")->references("id");
             $table->string('objetivo')->nullable();
-            $table->enum('tipo', ['seccion', 'contenido', 'sistema']);
+            $table->enum('tipo', ['seccion', 'contenido', 'sistema', 'subseccion']);
             $table->timestamps();
         });
     }
