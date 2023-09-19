@@ -1,5 +1,3 @@
-<section>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,115 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ALUMNO</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
-    <
 </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="columns-md-12">
-                @if (Session::has('success'))
-                <div class="alert alert-success d-flex align-items-center" role="alert">
-                    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                    <div>
-                     {{ Session::get('success') }}
-                    </div>
-                  </div>
-                @endif
+
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <div class="bg-white shadow-md rounded px-4 py-4">
+            @if (Session::has('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Éxito!</strong>
+                <span class="block sm:inline">{{ Session::get('success') }}</span>
             </div>
+            @endif
 
-            <div class="col-md-12">
-                <form class="row g-3" action="{{ route('import') }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="col-auto">
-                        <label class="visually-hidden">Excel Alumno </label>
-                        <input type="file" class="form-control" name="excel_file">
-                    </div>
+            <form class="mb-4" action="{{ route('import') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="excel_file">Excel Alumno</label>
+                    <input type="file" class="form-input mt-1 block w-full" name="excel_file">
                     @error('excel_file')
-                    <p class="text-danger">{{ $message }}</p>
+                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
                     @enderror
+                </div>
+                <div class="mb-4">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Subir Excel
+                    </button>
+                </div>
+            </form>
 
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-primary mb-3">Subir Excel</button>
-                    </div>
-                </form>
+            <h1 class="text-2xl font-semibold mb-4">ALUMNO</h1>
+            <div class="block w-full overflow-x-auto">
+                <table class="items-center bg-transparent w-full border-collapse ">
+                    <thead>
+                        <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">ID</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Clave Centro</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Plantel</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Clave Municpal</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Clave Local</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Matricula</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Correo</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Nombres</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Apellido Paterno</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Apellido Materno</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Curp</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Telefono de Casa</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Nacionalidad</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">FolioSec</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Grado</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Grupo</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Celular</th>
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Estatus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (count($alumnos))
+                        @foreach ($alumnos as $alumno)
+                            <tr>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->id}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->clacentro}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->nombreplan}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->clavemuni}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->clavelocal}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->matricula}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->correo}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->nombres}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->papellido}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->sapellido}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->curp}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->telcasa}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->nacionalidad}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->foliosec}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->grado}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->grupo}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->celular}}</td>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">{{$alumno->estatus}}</td>
+                            </tr>
+                        @endforeach
+                        @else
+                            <tr>
+                                <td class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" colspan="18">No se encontraron alumnos</td>
+                            </tr>
+                        @endif
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
-<div class="container">
-    <h1>ALUMNO</h1>
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Clave Centro</th>
-                <th scope="col">Plantel</th>
-                <th scope="col">Clave Municpal</th>
-                <th scope="col">Clave Local</th>
-                <th scope="col">Matricula</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Nombres</th>
-                <th scope="col">Apellido Paterno</th>
-                <th scope="col">Apellido Materno</th>
-                <th scope="col">Curp</th>
-                <th scope="col">Telefono de Casa</th>
-                <th scope="col">Nacionalidad</th>
-                <th scope="col">FolioSec</th>
-                <th scope="col">Grado</th>
-                <th scope="col">Grupo</th>
-                <th scope="col">Celular</th>
-                <th scope="col">Estatus</th>
-
-
-            </tr>
-            </thead>
-
-
-            <tbody>
-                @if (count($alumnos))
-                @foreach ($alumnos as $alumno)
-                    <tr>
-                        <th scope="row">{{$alumno->id}}</th>
-                        <td>{{$alumno->clacentro}}</td>
-                        <td>{{$alumno->nombreplan}}</td>
-                        <td>{{$alumno->clavemuni}}</td>
-                        <td>{{$alumno->clavelocal}}</td>
-                        <td>{{$alumno->matricula}}</td>
-                        <td>{{$alumno->correo}}</td>
-                        <td>{{$alumno->nombres}}</td>
-                        <td>{{$alumno->papellido}}</td>
-                        <td>{{$alumno->sapellido}}</td>
-                        <td>{{$alumno->curp}}</td>
-                        <td>{{$alumno->telcasa}}</td>
-                        <td>{{$alumno->nacionalidad}}</td>
-                        <td>{{$alumno->foliosec}}</td>
-                        <td>{{$alumno->grado}}</td>
-                        <td>{{$alumno->grupo}}</td>
-                        <td>{{$alumno->celular}}</td>
-                        <td>{{$alumno->estatus}}</td>
-                    </tr>
-                @endforeach
-            @else
-                <tr>
-                    <td>No se encontraron alumnos</td>
-                </tr>
-            @endif
-
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- Tailwind CSS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.js"></script>
 </body>
 </html>
-
-</section>

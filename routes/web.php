@@ -30,7 +30,8 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-});
+});    Route::get('/', [PublicacionController::class, 'index'])->name('publicaciones.index');
+
 
 
 Route::get('/getseccionesAPI',[SeccionController::class,'getseccionesAPI'])->name('getseccionesAPI');

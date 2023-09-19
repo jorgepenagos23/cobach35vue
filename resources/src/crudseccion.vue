@@ -15,59 +15,39 @@
 
           <div class="lg:col-span-2">
             <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-              <div class="md:col-span-5">
-                <label for="full_name">Full Name</label>
-                <input type="text" name="full_name" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" />
-
-                        <div>
-            <h1 class="title">Lista de Secciones RECIBIDO VUE OK JSON SECCIONES</h1>
-            <ul>
-                <li v-for="seccion in secciones" :key="seccion.id" class="seccion-item">
-                <P> Seccion</P> <h2>{{ seccion.nombre }}</h2>
-                <p>Orden de presentación: {{ seccion.orden_presentacion }}</p>
-                <p>Visible: {{ seccion.visible }}</p>
-                <!-- Agrega más campos aquí según tu estructura de datos -->
-                </li>
-            </ul>
+                <div class="md:col-span-5 bg-orange-300">
+    <label for="full_name">Lista de Secciones</label>
+                <div>
+                <h1 class="title">SECCIONES DESDE API</h1>
+                <table class="min-w-full border-collapse block md:table">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Orden de Presentación</th>
+                        <th>Visible</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="seccion in secciones" :key="seccion.id">
+                        <td>{{ seccion.nombre }}</td>
+                        <td>{{ seccion.orden_presentacion }}</td>
+                        <td>{{ seccion.visible }}</td>
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                        <button @click="editarSeccion(seccion)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Editar</button>
+                        <button @click="eliminarSeccion(seccion.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Eliminar</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
             </div>
 
 
 
-              </div>
-
-              <div class="md:col-span-5">
-                <label for="email">Nombre</label>
-                <input type="text" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="email@domain.com" />
-              </div>
-
-              <div class="md:col-span-3">
-                <label for="address">Address / Street</label>
-                <input type="text" name="address" id="address" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="" />
-              </div>
 
               <div class="md:col-span-2">
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="" />
-              </div>
-
-              <div class="md:col-span-2">
-                <label for="country">Country / region</label>
-                <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
-                  <input name="country" id="country" placeholder="Country" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent" value="" />
-                  <button tabindex="-1" class="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600">
-                    <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                  </button>
-                  <button tabindex="-1" for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600">
-                    <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="md:col-span-2">
-                <label for="state">State / province</label>
+                <label for="state">AGREGAR SECCIONES</label>
                 <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                   <input name="state" id="state" placeholder="State" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent" value="" />
                   <button tabindex="-1" class="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600">

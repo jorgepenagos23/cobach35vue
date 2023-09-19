@@ -4,7 +4,7 @@
         <div class="group-hover:animate-spin-slow invisible absolute -top-40 -bottom-40 left-10 right-10 bg-gradient-to-r from-transparent via-white/90 to-transparent group-hover:visible"></div>
         <div class="relative rounded-[15px] bg-white p-6">
           <div class="space-y-4">
-            <img src="http://35tuxtlanorte.edu.mx/images/logo35.png" alt="" style="z-index: 2;" />
+            <img src="https://35tuxtlanorte.edu.mx/images/logo35.png" alt="" style="z-index: 2;" />
 
             <p class="text-lg font-semibold-sans text-slate-800">Inicia sesión</p>
             <div class="mx-auto my-36 flex h-[300px] w-[350px] flex-col border-2 bg-white text-black shadow-xl">

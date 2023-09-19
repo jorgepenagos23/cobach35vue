@@ -10,8 +10,6 @@ import crudseccion from "../src/crudseccion.vue";
 import { createRouter, createWebHistory } from 'vue-router';
 
 import 'sweetalert2/dist/sweetalert2.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
 // Crea y monta la aplicación principal en #app
 const app = createApp(App);
 app.mount("#app");
