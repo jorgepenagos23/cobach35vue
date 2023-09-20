@@ -6,6 +6,7 @@ use App\Models\Publicacion;
 use App\Http\Requests\StorePublicacionRequest;
 use App\Http\Requests\UpdatePublicacionRequest;
 use App\Models\Seccion;
+use Illuminate\Http\Request;
 
 class PublicacionController extends Controller
 {
@@ -39,11 +40,17 @@ class PublicacionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * VAMOS A CREAR UNA PUBLICACION
      */
-    public function store(StorePublicacionRequest $request)
+    public function store(Request $request)
     {
-        //
+
+
+        
+
+
+
+
     }
 
     /**

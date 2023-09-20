@@ -15,7 +15,7 @@ Route::get('/login',[UsuarioController::class,'login'])->name('login');
 Route::middleware(['auth'])->group(function () {
 
 
-    Route::get('/listar_alumno', [AlumnoController::class, 'index'])->name('listarAlumno');
+    Route::get('/listar_alumno', [AlumnoController::class, 'index2'])->name('listarAlumno');
     Route::post('/subir_alumno', [AlumnoController::class, 'import'])->name('import');
 
     Route::get('/secciones',[SeccionController::class,'secciones'])->name('secciones');
@@ -24,14 +24,15 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [UsuarioController::class, 'dashboard'])->name('dashboard');
     Route::get('/listarAlumno2', [UsuarioController::class, 'index']);
-    Route::get('/inicio', function () {  return view('inicio'); });
 
 
 
 
 
-});    Route::get('/', [PublicacionController::class, 'index'])->name('publicaciones.index');
+});
 
+Route::get('/', [PublicacionController::class, 'index'])->name('publicaciones.index');
+Route::get('/inicio', function () {  return view('inicio'); });
 
 
 Route::get('/getseccionesAPI',[SeccionController::class,'getseccionesAPI'])->name('getseccionesAPI');
@@ -40,11 +41,11 @@ Route::get('/secciones', [SeccionController::class, 'secciones'])->name('seccion
 
 Route::get('/banner', [SeccionController::class, 'secciones'])->name('banner');
 
-Route::get('/crudsecciones', [SeccionController::class, 'crudsecciones'])->name('crudsecciones');
+Route::get('/MostrarSeccion', [SeccionController::class, 'MostrarSeccion'])->name('MostrarSeccion');
 
 
 
-Route::get('/inicio-alumno', [UsuarioController::class, 'index'])->name('inicio-alumno');
+Route::get('/inicio-alumno', [AlumnoController::class, 'index2'])->name('inicio-alumno'); // esta ruta pasarla alumno controller
 
 
 Route::get('/getseccionesPublicAPI', [PublicacionController::class, 'getseccionesAPI'])->name('getseccionesPublicAPI');

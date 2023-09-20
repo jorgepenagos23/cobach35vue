@@ -1,2 +1,6 @@
-@extends('layouts.app')
+<html>
 
+
+
+
+</html>

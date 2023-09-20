@@ -3,7 +3,10 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "watch": "vite build --watch"
+
+
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^4.3.4",

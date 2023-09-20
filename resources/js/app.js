@@ -1,11 +1,11 @@
 import './bootstrap';
 import { createApp } from "vue";
-import App from "../src/App.vue"
-import login from "../src/login.vue";
-import inicio from "../src/inicio.vue";
-import dashboard from "../src/dashboard.vue";
+import App from "../src/components/publicaciones/App.vue"
+import login from "../src/components/sistema/login.vue";
+import inicio from "../src/components/inicio.vue";
+import dashboard from "../src/components/sistema/dashboard.vue";
 import secciones from "../src/secciones.vue";
-import crudseccion from "../src/crudseccion.vue";
+import MostrarSeccion from "../src/components/secciones/MostrarSeccion.vue";
 
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -27,8 +27,8 @@ dashApp.mount("#dashboard");
 const seccionesApp = createApp(secciones);
 seccionesApp.mount("#secciones");
 
-const crudseccionApp = createApp(crudseccion); // Cambiar "crudseccion" a "crudseccionApp" aquí
-crudseccionApp.mount("#crudseccion");
+const MostrarSeccionApp = createApp(MostrarSeccion); // Cambiar "crudseccion" a "crudseccionApp" aquí
+MostrarSeccionApp.mount("#MostrarSeccion");
 
 const router = createRouter({
     history: createWebHistory(),

@@ -26,7 +26,7 @@
 <body class="antialiased">
     @include('banner')
 
-    <div id="crudseccion">
+    <div id="MostrarSeccion">
 
      @vite('resources/js/app.js')
 

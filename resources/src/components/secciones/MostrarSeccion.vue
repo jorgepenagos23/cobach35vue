@@ -118,7 +118,7 @@
       };
     },
     mounted() {
-      axios.get('/getseccionesAPI')
+      axios.get('/api/v1/secciones')
         .then(response => {
           // La solicitud se envió correctamente, y la respuesta está en 'response.data'
           this.secciones = response.data.secciones; // Asigna la matriz de secciones a 'this.secciones'

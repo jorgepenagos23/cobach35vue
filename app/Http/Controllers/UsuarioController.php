@@ -8,7 +8,7 @@ use App\Http\Requests\UpdateUsuarioRequest;
 use App\Models\Alumno;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -54,57 +54,132 @@ class UsuarioController extends Controller
 
     public function index()
     {
-        $alumno = Alumno::get();
 
-        return view('alumno.alumno',['alumnos'=>$alumno]);
-
+        return Usuario::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreUsuarioRequest $request)
+
+    public function store(Request $request)
     {
-        //
+
+        $inputs = $request->input();
+
+        $inputs["password"] = Hash::make(trim($request->password));
+        $respuesta = Usuario::create($inputs);
+
+        return response()->json([
+
+            'data' => $respuesta,
+            'mensaje' => "guardado ",
+
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Usuario $usuario)
+
+    public function show( $id)
     {
-        //
+
+
+        $seccion = Usuario::find($id);
+
+        if(isset($seccion)){
+
+            return response()->json([
+
+            'data' => $seccion,
+            'mensaje' => " encontrada con exito  "
+
+            ]);
+        }else{
+
+
+            return response()->json([
+
+                'error'=>true,
+                'mesnsaje'=>"No existe esa ",
+
+            ]);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Usuario $usuario)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateUsuarioRequest $request, Usuario $usuario)
+
+    public function update(Request $request, $id)
     {
-        //
+        $seccion = Usuario::find($id);
+
+                if( isset($seccion)){
+
+                    $seccion->correo = $request->correo;
+                    $seccion->password = Hash::make($request->password);
+
+
+                    if( $seccion->save()){
+
+                        return response()->json([
+
+                            'data' => $seccion,
+                            'mensaje' => " actulizada con exito ",
+                        ]);
+                    }else{
+
+                        return response()->json([
+                            'error'=>true,
+                            'mesnsaje'=>"No se actualizo  esa ",
+                        ]);
+
+                    }
+                }else{
+
+                    return response()->json([
+                        'error'=>true,
+                        'mesnsaje'=>"No existe  ",
+                    ]);
+
+                }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Usuario $usuario)
+
+    public function destroy( $id)
     {
-        //
+
+        $seccion = Usuario::find($id);
+
+        if( isset($seccion)){
+
+            $resp = Usuario::destroy($id);
+            if($resp){
+
+                return response()->json([
+                    'data'=>$seccion,
+                    'mesnsaje'=>"se borro  exitosamente",
+                ]);
+            }else{
+                return response()->json([
+                    'data'=>$seccion,
+                    'mesnsaje'=>"la  no existe",
+                ]);
+
+            }
+
+        }else{
+
+                return response()->json([
+                    'error'=>true,
+                    'mesnsaje'=>"la  no existe",
+                ]);
+
+            }
     }
 }
