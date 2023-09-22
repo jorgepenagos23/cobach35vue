@@ -31,8 +31,10 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
-Route::get('/', [PublicacionController::class, 'index'])->name('publicaciones.index');
-Route::get('/inicio', function () {  return view('inicio'); });
+
+
+Route::get('/publicaciones', [PublicacionController::class, 'index'])->name('publicaciones.index');
+Route::get('/', function () {  return view('inicio'); });
 
 
 Route::get('/getseccionesAPI',[SeccionController::class,'getseccionesAPI'])->name('getseccionesAPI');

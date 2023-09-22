@@ -1,19 +1,25 @@
-import './bootstrap';
-import { createApp } from "vue";
-import App from "../src/components/publicaciones/App.vue"
+
+import { createApp } from 'vue';
+import App from '../src/components/App.vue';
 import login from "../src/components/sistema/login.vue";
 import inicio from "../src/components/inicio.vue";
 import dashboard from "../src/components/sistema/dashboard.vue";
 import secciones from "../src/secciones.vue";
 import MostrarSeccion from "../src/components/secciones/MostrarSeccion.vue";
-
-import { createRouter, createWebHistory } from 'vue-router';
+import MostrarPublicaciones from "../src/components/publicaciones/MostrarPublicaciones.vue";
+import './bootstrap';
 
 import 'sweetalert2/dist/sweetalert2.css';
-// Crea y monta la aplicación principal en #app
-const app = createApp(App);
-app.mount("#app");
 
+// IMPORTAMOS AXIOS
+import VueAxios from 'vue-axios';
+import axios from 'axios';
+
+// Importamos y configuramos Vue Router
+import { createWebHistory, createRouter } from 'vue-router'; // Asegúrate de importar createRouter correctamente
+import router from './router'; // Importa tu archivo router.js
+
+const app = createApp(App);
 
 const loginApp = createApp(login);
 loginApp.mount("#login");
@@ -28,16 +34,12 @@ const seccionesApp = createApp(secciones);
 seccionesApp.mount("#secciones");
 
 const MostrarSeccionApp = createApp(MostrarSeccion); // Cambiar "crudseccion" a "crudseccionApp" aquí
-MostrarSeccionApp.mount("#MostrarSeccion");
+MostrarSeccionApp.mount("#MostrarSeccion")
 
-const router = createRouter({
-    history: createWebHistory(),
-    routes: [
-      { path: '/', component: inicio }, // Cambiar "Inicio" a "inicio"
+const MostrarPublicacionesApp = createApp(MostrarPublicaciones); // Cambiar "crudseccion" a "crudseccionApp" aquí
+MostrarPublicacionesApp.mount("#MostrarPublicaciones")
 
+app.use(VueAxios, axios);
+app.use(router); // Usa el enrutador importado
 
-
-      // Otras rutas aquí
-    ],
-});
-
+app.mount('#app');

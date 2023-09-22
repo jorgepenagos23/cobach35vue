@@ -1,4 +1,7 @@
 <template>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+
     <div class="flex h-screen items-center">
       <div class="group relative mx-auto w-96 overflow-hidden rounded-[16px] bg-gradient-to-bl from-blue-800 to-sky-900 p-[1px] transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500">
         <div class="group-hover:animate-spin-slow invisible absolute -top-40 -bottom-40 left-10 right-10 bg-gradient-to-r from-transparent via-white/90 to-transparent group-hover:visible"></div>
@@ -37,10 +40,7 @@
                     Entrar
                   </button>
                 </div>
-                <div class="mx-7 my-3 flex justify-between text-sm font-semibold">
-                  <div><h1>Forget Password</h1></div>
-                  <div><h1 class="underline underline-offset-2">Signup</h1></div>
-                </div>
+
               </form>
             </div>
           </div>
