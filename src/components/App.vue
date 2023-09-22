@@ -1,9 +1,6 @@
 <template>
 
-<header>
-    <inicioVue> </inicioVue>
 
-</header>
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +18,7 @@
       <div class="" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-          <router-link class="nav-link" to="/">Inicio</router-link>
+          <router-link class="nav-link" to="/">Home</router-link>
           </li>
 
           <li class="nav-item">
@@ -37,6 +34,7 @@
 
 
     </nav>
+    <inicioVue> </inicioVue>
     <main>
         <router-view></router-view> <!-- Aquí se mostrarán los componentes de las rutas -->
 

@@ -41,13 +41,13 @@ class UsuarioController extends Controller
     public function cerrar_sesion()
     {
         Auth::logout();
-        return redirect('login');
+        return redirect('/');
     }
 
 
     public function login()
     {
-        return view('login');
+        return redirect('/')->with('message', 'Sesión cerrada exitosamente'); // Redirige al usuario a la página de inicio de sesión con un mensaje
     }
 
 

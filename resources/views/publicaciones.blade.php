@@ -34,7 +34,7 @@
 
     <body class="antialiased">
         <div id="MostrarPublicaciones">
-            @vite('resources/js/app.js')
+            @vite('resources/js/main.js')
 
         </div>
 

@@ -104,24 +104,13 @@
     </div>
   </div>
 </div>
-<inicioVue> </inicioVue>
-    <main>
-        <router-view></router-view> <!-- Aquí se mostrarán los componentes de las rutas -->
 
-    </main>
   </template>
 
   <script>
   import axios from 'axios';
-  import inicioVue from "/laragon/www/cobach35vue/resources/src/components/inicio.vue";
 
   export default {
-
-
-    name: 'App',
-    components: {
-        inicioVue
-    },
     data() {
       return {
         secciones: [], // Inicializa con un array vacío

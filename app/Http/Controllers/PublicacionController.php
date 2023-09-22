@@ -15,6 +15,7 @@ class PublicacionController extends Controller
      */
     public function index()
     {
+
         $publicaciones = Publicacion::all(); // Esto es un ejemplo; reemplázalo con la lógica adecuada
         $secciones = Seccion::all();
         // Luego, puedes retornar la vista "publicaciones" con los datos necesarios
@@ -46,7 +47,7 @@ class PublicacionController extends Controller
     {
 
 
-        
+
 
 
 

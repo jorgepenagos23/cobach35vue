@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/login',[UsuarioController::class,'login'])->name('login');
-
 Route::middleware(['auth'])->group(function () {
 
 
@@ -28,13 +27,15 @@ Route::middleware(['auth'])->group(function () {
 
 
 
+    Route::POST ('/logout',[UsuarioController::class,'cerrar_sesion'])->name('logout');
 
 });
 
 
 
-Route::get('/publicaciones', [PublicacionController::class, 'index'])->name('publicaciones.index');
-Route::get('/', function () {  return view('inicio'); });
+//Route::get('/publicaciones', [PublicacionController::class, 'index'])->name('publicaciones.index');
+Route::get('/', [SeccionController::class, 'index2'])->name('inicio');
+
 
 
 Route::get('/getseccionesAPI',[SeccionController::class,'getseccionesAPI'])->name('getseccionesAPI');
@@ -54,7 +55,7 @@ Route::get('/getseccionesPublicAPI', [PublicacionController::class, 'getseccione
 Route::get('/publicaciones', [PublicacionController::class, 'index'])->name('publicaciones.index');
 
 
-Route::POST ('/logout',[UsuarioController::class,'cerrar_sesion'])->name('logout');
 Route::POST('/authenticate',[UsuarioController::class,'authenticate'])->name('/authenticate')->middleware('web');;
 
 
+Route::get('/{any}', function () { return redirect('/');})->where('any', '.*');

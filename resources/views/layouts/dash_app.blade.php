@@ -11,7 +11,7 @@
 
 <body class="antialiased">
     <div id="dashboard">
-        @vite('resources/js/app.js')
+        @vite('resources/js/main.js')
     </div>
 
 

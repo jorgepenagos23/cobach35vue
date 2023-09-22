@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Seccion;
 use App\Http\Requests\StoreSeccionRequest;
 use App\Http\Requests\UpdateSeccionRequest;
+use App\Models\Publicacion;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\If_;
 use Illuminate\Http\Response;
@@ -17,6 +18,15 @@ class SeccionController extends Controller
 
         return view('seccion.seccion', ['secciones' => $secciones])->with('banner', $secciones); // Puedes agregar más vistas y datos aquí si es necesario
 
+        }
+
+        public function index2()
+        {
+
+            $publicaciones = Publicacion::all(); // Esto es un ejemplo; reemplázalo con la lógica adecuada
+            $secciones = Seccion::all();
+            // Luego, puedes retornar la vista "publicaciones" con los datos necesarios
+            return view('inicio', ['publicaciones' => $publicaciones,'secciones' => $secciones]);
         }
 
 

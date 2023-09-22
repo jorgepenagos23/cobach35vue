@@ -41,6 +41,7 @@ const routes = [
     path: '/login',
     component: Login //Importo el componente de inicio de sesion
 
+
   }
 
 

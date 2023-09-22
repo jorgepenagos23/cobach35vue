@@ -1,32 +1,68 @@
 <template>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"> VUE RUTA HOME VIEW</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-    </ul>
-    <span class="navbar-text">
-      Navbar text with an inline element
-    </span>
-  </div>
-</nav>
-
-</template>
+    <div id="app">
+      <nav class="navbar bg-emerald-500" >
+        <h1>Listado de Secciones</h1>
+        <ul>
+          <li v-for="seccion in secciones" :key="seccion.id">
+            <template v-if="seccion.tipo === 'seccion'">
+          {{ seccion.nombre }}
+        </template>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </template>
 
 
-<script>
 
-</script>
+  <style>
+
+
+  .navbar h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .navbar li {
+    display: inline;
+    margin-right: 30px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+  }
+  </style>
+
+  <script>
+  import axios from 'axios';
+
+  export default {
+    data() {
+      return {
+        secciones: [],
+      };
+    },
+    created() {
+      axios.get('api/v1/secciones')
+        .then(response => {
+          this.secciones = response.data.secciones;
+        })
+        .catch(error => {
+          console.error('Error al obtener las secciones:', error);
+        });
+    },
+
+
+    methods:{
+
+  },
+
+    };
+  </script>

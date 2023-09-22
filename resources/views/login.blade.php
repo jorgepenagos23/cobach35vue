@@ -47,7 +47,6 @@
     <body class="antialiased">
         <div id="login">
 
-       @vite('resources/js/app.js')
         </div>
 
 
