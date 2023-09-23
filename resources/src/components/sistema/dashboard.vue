@@ -114,8 +114,8 @@
 
 <script>
 import Swal from "sweetalert2";
-import navegacion from "/laragon/www/cobach35vue/resources/js/Componentes/navegacion.vue";
-import inicioVue from "/laragon/www/cobach35vue/resources/src/components/inicio.vue";
+import navegacion from "../../../js/Componentes/navegacion.vue";
+import inicioVue from "../inicio.vue";
 
 export default {
 

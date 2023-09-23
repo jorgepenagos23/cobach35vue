@@ -49,7 +49,7 @@
   </template>
 
 <script>
-import inicioVue from "/laragon/www/cobach35vue/resources/src/components/inicio.vue";
+import inicioVue from "./inicio.vue";
 export default{
 
     name: 'App',

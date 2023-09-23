@@ -23,7 +23,7 @@
 }
 </style>
   <script>
-import banner from "/laragon/www/cobach35vue/resources/src/components/banner.vue";
+import banner from "../banner.vue";
 
   export default {
     // Otros datos y métodos de App.vue...

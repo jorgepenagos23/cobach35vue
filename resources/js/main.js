@@ -13,7 +13,7 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import './bootstrap';
-import navegacion from "/laragon/www/cobach35vue/resources/js/Componentes/navegacion.vue";
+import navegacion from "./Componentes/navegacion.vue";
 import banner from '../src/components/banner.vue';
 
 import 'sweetalert2/dist/sweetalert2.css';

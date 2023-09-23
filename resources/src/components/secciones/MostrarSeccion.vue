@@ -78,8 +78,8 @@
 
   <script>
   import axios from 'axios';
-  import inicioVue from "/laragon/www/cobach35vue/resources/src/components/inicio.vue";
-  import banner from "/laragon/www/cobach35vue/resources/src/components/banner.vue";
+  import inicioVue from "../inicio.vue";
+  import banner from "../banner.vue";
 
   export default {
 

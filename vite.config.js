@@ -19,9 +19,8 @@ export default defineConfig({
         vue()
     ],
 
-    resolve: {
-        alias: {
-          '@plugins': path.resolve(__dirname, 'src/plugins')
-        }
-      }
+
+
+
 });
+
