@@ -1,4 +1,3 @@
-@extends('layouts.dash_app')
 
 <!DOCTYPE html>
 <html lang="es">
@@ -16,14 +15,14 @@
 </head>
 
 
-<body class="antialiased">
+<body >
 
-    <div id="dashboard">
-        @vite('resources/js/main.js')
+    <div id="app">
+     @vite('resources/js/main.js')
     </div>
+    </body>
 
 
-</body>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js"></script>
 

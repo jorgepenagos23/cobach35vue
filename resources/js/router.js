@@ -7,6 +7,10 @@ import MostrarPublicaciones from '../src/components/publicaciones/MostrarPublica
 import Crear from '../src/components/publicaciones/Crear.vue';
 import Editar from '../src/components/publicaciones/Editar.vue';
 import Login from '../src/components//sistema/login.vue'; // Ajusta la ubicación según la estructura de tu proyecto
+import Navegation from '../src/components//sistema/Navegation.vue'; // Ajusta la ubicación según la estructura de tu proyecto
+import navegacion from '../js/Componentes/navegacion.vue'; // Ajusta la ubicación según la estructura de tu proyecto
+import dashboard from "../src/components/sistema/dashboard.vue";
+import banner from '../src/components/banner.vue';
 
 const routes = [
 
@@ -39,11 +43,32 @@ const routes = [
   {
     name: 'Login',
     path: '/login',
-    component: Login //Importo el componente de inicio de sesion
+    component: () => import('../src/components/sistema/login.vue'), // Ejemplo de carga diferida
+
+
+  },
+
+  {
+    name: 'Navegation',
+    path: '/Navegation',
+    component: navegacion
+
+
+  },
+  {
+    name: 'dashboard',
+    path: '/dashboard',
+    component: dashboard
+
+
+  },
+  {
+    name: 'banner',
+    path: '/banner',
+    component: banner
 
 
   }
-
 
 
 ];

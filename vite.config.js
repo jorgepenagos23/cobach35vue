@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from "@vitejs/plugin-vue"
+
 export default defineConfig({
     server: {
         port: 3000, // Cambia el puerto a 3000 u otro de tu elección
@@ -17,4 +18,10 @@ export default defineConfig({
         }),
         vue()
     ],
+
+    resolve: {
+        alias: {
+          '@plugins': path.resolve(__dirname, 'src/plugins')
+        }
+      }
 });

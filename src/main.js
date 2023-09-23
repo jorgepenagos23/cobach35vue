@@ -8,6 +8,7 @@ import secciones from "/laragon/www/cobach35vue/src/components/secciones.vue";
 import MostrarSeccion from "/laragon/www/cobach35vue/src/components/secciones/MostrarSeccion.vue";
 import MostrarPublicaciones from "/laragon/www/cobach35vue/src/components/publicaciones/MostrarPublicaciones.vue";
 
+
 import '../resources/js/bootstrap';
 
 import 'sweetalert2/dist/sweetalert2.css';

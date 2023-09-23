@@ -7,16 +7,15 @@
 
     <!-- Agrega el enlace al archivo CSS compilado de Tailwind CSS -->
     <link href="{{ mix('resources/css/dashboard.css') }}" rel="stylesheet">
+
 </head>
 
 <body class="antialiased">
+
     <div id="dashboard">
         @vite('resources/js/main.js')
     </div>
 
 
-    <style>
-
-      </style>
 </body>
 </html>

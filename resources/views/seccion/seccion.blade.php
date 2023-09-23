@@ -20,7 +20,6 @@
 
     <div id="MostrarSeccion">
 
-     @vite('resources/js/main.js')
 
       </div>
 

@@ -26,7 +26,6 @@
 
 <body class="antialiased">
 
-    <h1>Laravel </h1>
     <div id="app">
         @vite('resources/js/main.js')
 

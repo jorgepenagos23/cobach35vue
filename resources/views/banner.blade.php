@@ -5,10 +5,9 @@
 <link href="{{ mix('resources/css/dashboard.css') }}" rel="stylesheet">
 <link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
-
 <header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light" data-secciones="{{ json_encode($secciones) }}">
+    <nav class="navbar navbar-expand-lg navbar-yellow bg-dark" data-secciones="{{ json_encode($secciones) }}">
         <div class="container mx-auto px-4 py-2">
         <ul class="flex items-center justify-between space-x-4">
             @foreach ($secciones as $seccion)
@@ -18,7 +17,7 @@
                            aria-haspopup="true" @click.prevent="toggleSubMenu('{{ $seccion->id }}')">
                             {{ $seccion->nombre }}
                         </a>
-                        <ul class="submenu absolute hidden left-0 mt-2 space-y-1 bg-white text-black group-hover:block"
+                        <ul class="submenu absolute hidden left-0 mt-2 space-y-1 bg-dark text-black group-hover:block"
                             x-show="openSubMenus.includes('{{ $seccion->id }}')" @click.away="closeSubMenus">
                             @foreach ($secciones as $subseccion)
                                 @if ($subseccion->tipo === 'subseccion' && $subseccion->seccion_id === $seccion->id)

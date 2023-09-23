@@ -1,56 +1,34 @@
 <template>
-
-<header>
-    <inicioVue> </inicioVue>
-
-</header>
-
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-    <img src="http://35tuxtlanorte.edu.mx/images/logo35.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Cobach
-  </a>
-      <router-link class="navbar-brand" to="/"></router-link>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-      <div class="" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-          <router-link class="nav-link" to="/">Inicio</router-link>
-          </li>
-
-          <li class="nav-item">
-            <router-link class="nav-link" to="/MostrarPublicaciones"> Publicaciones</router-link>
-          </li>
-
-
-          <li class="nav-item">
-            <router-link class="nav-link" to="/login">Iniciar Sesión</router-link>
-          </li>
-        </ul>
-   </div>
-
-
-    </nav>
-    <main>
-        <router-view></router-view> <!-- Aquí se mostrarán los componentes de las rutas -->
-
-    </main>
+    <div id="app">
+      <header>
+        <banner></banner>
+      </header>
+      <body>
+        <transition name="fade" mode="out-in">
+          <router-view></router-view>
+        </transition>
+      </body>
+      <main style="position: relative; z-index: 1;">
+        <!-- Aquí se mostrará el contenido de tus vistas -->
+      </main>
+    </div>
   </template>
 
-<script>
-import inicioVue from "/laragon/www/cobach35vue/resources/src/components/inicio.vue";
-export default{
-
-    name: 'App',
-    components: {
-        inicioVue
-    }
-
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
 }
-</script>
+.fade-enter, .fade-leave-to /* .fade-leave-active en versiones antiguas de Vue */ {
+  opacity: 0;
+}
+</style>
+  <script>
+import banner from "/laragon/www/cobach35vue/resources/src/components/banner.vue";
+
+  export default {
+    // Otros datos y métodos de App.vue...
+    components: {
+        banner,
+    },
+  };
+  </script>
