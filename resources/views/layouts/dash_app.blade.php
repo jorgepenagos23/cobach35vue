@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Agrega el enlace al archivo CSS compilado de Tailwind CSS -->
-    <link href="{{ mix('resources/css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ assset('resources/css/dashboard.css') }}" rel="stylesheet">
 
 </head>
 
@@ -15,7 +15,6 @@
     <div id="dashboard">
         @vite('resources/js/main.js')
     </div>
-
 
 </body>
 </html>

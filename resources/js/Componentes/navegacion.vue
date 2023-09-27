@@ -3,9 +3,11 @@
       <v-layout>
         <!-- Barra de navegación -->
         <v-navigation-drawer
+          color="#0F3932"
           expand-on-hover
           rail
-          style="z-index: 2;"
+          style="position: fixed; z-index: 4;"
+          :width="drawerWidth"
         >
           <v-list>
             <v-list-item
@@ -18,22 +20,34 @@
           <v-divider></v-divider>
 
           <v-list density="compact" nav>
-            <v-list-item prepend-icon="mdi-folder" title="Inicio" value="myfiles"></v-list-item>
+            <v-list-item :to="{ name: 'dashboard' }" prepend-icon="mdi-folder" title="Inicio"></v-list-item>
             <v-list-item prepend-icon="mdi-account-multiple" title="Base de Datos" value="shared"></v-list-item>
-            <v-list-item prepend-icon="mdi-star" title="Configuracion de Sistema" value="starred"></v-list-item>
+            <v-list-item prepend-icon="mdi-star" title="Configuracion " value="starred"></v-list-item>
+            <v-list-item prepend-icon="mdi-star" title="Modo Dark" @click="toggleTheme"></v-list-item>
             <v-list-item prepend-icon="mdi-star" title="Salir" @click="logout"></v-list-item>
           </v-list>
         </v-navigation-drawer>
 
         <!-- Contenido principal -->
-        <v-main style="height: 250px"></v-main>
+        <v-main>
+          <!-- Contenido principal de tu aplicación -->
+        </v-main>
       </v-layout>
     </v-card>
   </template>
 
   <script>
   export default {
+    data() {
+      return {
+        drawerWidth: 200, // Ajusta el ancho del drawer aquí
+      };
+    },
     methods: {
+      toggleTheme() {
+        // Verifica el tema actual y alterna al otro
+        this.$vuetify.theme.light = !this.$vuetify.theme.dark;
+      },
       logout() {
         axios.post('/logout')
           .then(response => {
@@ -53,6 +67,10 @@
           timer: 7000
         });
       }
+
+
     }
-  }
+
+    }
+
   </script>

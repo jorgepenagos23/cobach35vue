@@ -3,32 +3,56 @@
       <header>
         <banner></banner>
       </header>
-      <body>
+
+      <main>
         <transition name="fade" mode="out-in">
           <router-view></router-view>
         </transition>
-      </body>
-      <main style="position: relative; z-index: 1;">
-        <!-- Aquí se mostrará el contenido de tus vistas -->
+
       </main>
     </div>
   </template>
 
-<style>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active en versiones antiguas de Vue */ {
-  opacity: 0;
-}
-</style>
+  <style scoped>
+  /* Estilo para el banner */
+  header {
+    position: fixed; /* Fija el banner en la parte superior */
+    width: 100%; /* Ancho completo */
+    background-color: #f1f2f7; /* Cambia el color de fondo según tus preferencias */
+    color: #f3f3f300; /* Cambia el color del texto según tus preferencias */
+    padding: 30px 0; /* Ajusta el espacio interior del banner */
+    text-align: center; /* Centra el contenido del banner */
+    z-index: -3; /* Asegura que el banner esté por encima del contenido */
+  }
+
+  /* Estilo para el contenido debajo del banner */
+  main {
+    margin-top: 60px; /* Ajusta el margen superior para dar espacio al banner */
+    padding: 20px; /* Ajusta el espacio interior del contenido */
+  }
+
+  </style>
+
+
+
   <script>
+
 import banner from "../banner.vue";
 
   export default {
-    // Otros datos y métodos de App.vue...
+
+
     components: {
         banner,
     },
+
+            methods:{
+                scrollToTop() {
+                     window.scrollTo({ top: 45, behavior: 'smooth' });
+                                     }
+            }
+
   };
+
+
   </script>
