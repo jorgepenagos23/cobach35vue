@@ -4,30 +4,26 @@
       <navegacion></navegacion>
 
     </header>
-    <v-container class="text-center">
-        <v-autocomplete
-                label="Buscar reporte"
-                theme="dark"
-                :items="['Alumno', 'Alumno', 'Alumno', 'Alumno', 'Alumno 5', 'Alumno 6']"
-                ></v-autocomplete>
-                    </v-container>
+
                 </div>
 
     <main>
-        <div class="d-flex">
-            <h1> Mostrar el alumno</h1>
+        <div class="d-flex  ">
 
         </div>
 
 
         <body>
-
+            <tabla-reportes></tabla-reportes>
+            <br>
             <crear-reportes></crear-reportes>
 
         </body>
     </main>
 
   </template>
+
+
         <style>
 
 body{
@@ -59,6 +55,24 @@ body{
         // Por ejemplo:
         this.searchResults = ['Resultado 1', 'Resultado 2', 'Resultado 3'];
       },
+
+
+      async search() {
+    try {
+      const response = await axios.get(`/api/buscar?query=${this.searchQuery}`);
+      this.searchResults = response.data;
+      this.showResults = true;
+    } catch (error) {
+      console.error('Error al realizar la búsqueda:', error);
+    }
+  },
+
+
+
+
     },
+
+
+
   };
   </script>

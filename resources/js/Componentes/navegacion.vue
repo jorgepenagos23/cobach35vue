@@ -3,7 +3,7 @@
       <v-layout>
         <!-- Barra de navegación -->
         <v-navigation-drawer
-          color="#0F3932"
+          color="#0d153b"
           expand-on-hover
           rail
           style="position: fixed; z-index: 4;"

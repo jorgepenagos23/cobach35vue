@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\AlumnoReporteController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\SeccionController;
 use App\Http\Controllers\UsuarioController;
@@ -37,6 +38,7 @@ Route::apiResource('v1/alumnos',AlumnoController::class);
 
 
 
+Route::apiResource('v1/alumno-reporte',AlumnoReporteController::class);
 
 
 

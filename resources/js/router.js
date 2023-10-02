@@ -4,15 +4,26 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Inicio from '../src/components/inicio.vue';
 import HomeView from '../src/components/HomeView.vue';
 import MostrarPublicaciones from '../src/components/reportes/MostrarPublicaciones.vue';
-import Crear from '../src/components/reportes/Crear.vue';
-import Editar from '../src/components/reportes/Editar.vue';
+
 import Login from '../src/components//sistema/login.vue'; // Ajusta la ubicación según la estructura de tu proyecto
-import Navegation from '../src/components//sistema/Navegation.vue'; // Ajusta la ubicación según la estructura de tu proyecto
 import navegacion from '../js/Componentes/navegacion.vue'; // Ajusta la ubicación según la estructura de tu proyecto
 import dashboard from "../src/components/sistema/dashboard.vue";
 import banner from '../src/components/banner.vue';
 import "../css/dist/js/bootstrap.bundle";
 import "../css/dist/css/bootstrap.css";
+
+
+import TablaReportes from '../src/components/reportes/TablaReportes.vue';
+import Crear from '../src/components/reportes/Crear.vue';
+import Editar from '../src/components/reportes/Editar.vue';
+
+import Alumnos from '../src/components/alumnos/MostrarAlumnos.vue'
+import TablaAlumnos from '../src/components/alumnos/TablaAlumnos.vue'
+
+import CrearPublicaciones from '../src/components/publicaciones/Crear.vue';
+import EditarPublicaciones from '../src/components/publicaciones/Editar.vue';
+import TablaPublicaciones from '../src/components/publicaciones/TablaPublicaciones.vue';
+
 
 
 const routes = [
@@ -68,14 +79,72 @@ const routes = [
   {
     name: 'banner',
     path: '/banner',
-    component: () => import('../src/components/banner.vue'), // Ejemplo de carga diferida
+    component: () => import('../src/components/banner.vue'),
+
+
+  },
+
+  {
+
+    name: 'EditarPublicaciones',
+    path: '/editar-publicaciones',
+    component:EditarPublicaciones
+
+
 
 
   },
 
 
+  {
+    name: 'CrarPublicaciones',
+    path: '/crear-publicaciones',
+    component:CrearPublicaciones
+  },
 
 
+  {
+    name: 'TablaPublicaciones',
+    path: '/tabla-publicaciones',
+    component:TablaPublicaciones
+
+  },
+
+
+  {
+    name: 'MostrarAlumnos',
+    path: '/alumnos',
+    component: Alumnos
+
+  },
+
+  {
+    name: 'TablaAlumnos',
+    path: '/tabla-alumnos',
+    component: TablaAlumnos
+
+  },
+
+  {
+
+    name: 'TablaReportes',
+    path: '/tabla-reportes',
+    component: TablaReportes
+
+
+
+  },
+
+
+  {
+
+    name: 'MostrarSecciones',
+    path: '/tabla-secciones',
+    component: () => import('../src/components/secciones/MostrarSeccion.vue'),
+
+
+
+  },
 
 ];
 

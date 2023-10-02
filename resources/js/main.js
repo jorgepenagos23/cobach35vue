@@ -1,22 +1,34 @@
 
 import { createApp } from 'vue';
 import App from '../src/components/App.vue';
-import login from "../src/components/sistema/login.vue";
-import inicio from "../src/components/inicio.vue";
 import dashboard from "../src/components/sistema/dashboard.vue";
 import secciones from "../src/secciones.vue";
 import MostrarSeccion from "../src/components/secciones/MostrarSeccion.vue";
 import MostrarPublicaciones from "../src/components/reportes/MostrarPublicaciones.vue";
-import Navegation from '../src/components//sistema/Navegation.vue'; // Ajusta la ubicación según la estructura de tu proyecto
+
 import 'vuetify/styles'
+
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import './bootstrap';
+
 import navegacion from "./Componentes/navegacion.vue";
 import banner from '../src/components/banner.vue';
+
 import Editar from '../src/components/reportes/Editar.vue';
 import Crear from '../src/components/reportes/Crear.vue';
+import TablaReportes from '../src/components/reportes/TablaReportes.vue';
+import EditarPublicaciones from '../src/components/publicaciones/Editar.vue';
+import CrearPublicaciones from '../src/components/publicaciones/Crear.vue';
+import TablaPublicaciones from '../src/components/publicaciones/TablaPublicaciones.vue';
+
+import Alumnos from '../src/components/alumnos/MostrarAlumnos.vue'
+import TablaAlumnos from '../src/components/alumnos/TablaAlumnos.vue'
+
+import TablaSecciones from '../src/components/secciones/MostrarSeccion.vue';
+
+
 
 import "../css/dist/js/bootstrap.bundle";
 import "../css/dist/css/bootstrap.css";
@@ -35,22 +47,13 @@ import router from './router'; // Importa tu archivo router.js
 
 const app = createApp(App);
 
-const loginApp = createApp(login);
-loginApp.mount("#login");
-
 
 
 const dashApp = createApp(dashboard);
 dashApp.mount("#dashboard");
 
-const seccionesApp = createApp(secciones);
-seccionesApp.mount("#secciones");
 
-const MostrarSeccionApp = createApp(MostrarSeccion); // Cambiar "crudseccion" a "crudseccionApp" aquí
-MostrarSeccionApp.mount("#MostrarSeccion");
 
-const MostrarPublicacionesApp = createApp(MostrarPublicaciones); // Cambiar "crudseccion" a "crudseccionApp" aquí
-MostrarPublicacionesApp.mount("#MostrarPublicaciones");
 
 
 const lightTheme = {
@@ -59,7 +62,6 @@ const lightTheme = {
 
   const darkTheme = {
     dark: true, // Habilita el tema oscuro
-    // Otras configuraciones del tema oscuro si es necesario
   };
 
   const vuetify = createVuetify({
@@ -84,8 +86,20 @@ app.use(router); // Usa el enrutador importado
 app.use(vuetify)
 app.component('navegacion', navegacion);
 app.component('banner', banner);
+
 app.component('editar-reportes', Editar);
 app.component('crear-reportes', Crear);
+app.component('tabla-reportes', TablaReportes);
+
+app.component('editar-publicaciones', EditarPublicaciones);
+app.component('crear-publicaciones', CrearPublicaciones);
+app.component('tabla-publicaciones', TablaPublicaciones);
+
+app.component('alumnos', Alumnos);
+app.component('tabla-alumnos', TablaAlumnos);
+
+
+app.component('tabla-secciones', TablaSecciones);
 
 
 app.mount('#app');

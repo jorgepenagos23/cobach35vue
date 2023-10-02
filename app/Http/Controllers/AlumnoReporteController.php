@@ -11,10 +11,11 @@ class AlumnoReporteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+
+     public function index()
+     {
+        return AlumnoReporte::all();
+     }
 
     /**
      * Show the form for creating a new resource.

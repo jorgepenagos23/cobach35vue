@@ -1,10 +1,27 @@
 <template>
 
+      <header>
+        <navegacion></navegacion>
+
+      </header>
 
 
-</template>
+      <main>
+          <div class="d-flex">
 
 
-<script>
+          </div>
+          <body>
 
-</script>
+          <tabla-alumnos></tabla-alumnos>
+
+
+            <subir-alumno>
+
+            </subir-alumno>
+
+
+          </body>
+      </main>
+
+    </template>

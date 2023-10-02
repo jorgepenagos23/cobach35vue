@@ -1,27 +1,14 @@
 <template>
-<header>
-    <banner> </banner>
+    <navegacion></navegacion>
 
-</header>
-    <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
-  <div class="container max-w-screen-lg mx-auto">
-    <div>
-      <h2 class="font-semibold text-xl text-gray-600">CRUD </h2>
-      <p class="text-gray-500 mb-6">Espacio para modificar el orden o algun anuncio del banner</p>
-
-      <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-        <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
-          <div class="text-gray-600">
-            <p class="font-medium text-lg"></p>
-            <p></p>
-          </div>
+    <div class="div-reportes bg-white">
 
           <div class="lg:col-span-2">
             <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-                <div class="md:col-span-5 bg-orange-300">
-    <label for="full_name">Lista de Secciones</label>
+                <div class="md:col-span-5 bg-white">
+                <label for="full_name">Lista de Secciones</label>
                 <div>
-                <h1 class="title">SECCIONES DESDE API</h1>
+                <h1 class="title">SECCIONES </h1>
                 <table class="min-w-full border-collapse block md:table">
                     <thead>
                     <tr>
@@ -46,17 +33,6 @@
                 </div>
             </div>
 
-
-
-
-              <div class="md:col-span-2">
-                <label for="state">AGREGAR SECCIONES</label>
-
-              </div>
-
-
-
-
               <div class="md:col-span-5 text-right">
                 <div class="inline-flex items-end">
                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Agregar</button>
@@ -66,14 +42,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-    <main>
-        <router-view></router-view> <!-- Aquí se mostrarán los componentes de las rutas -->
-
-    </main>
   </template>
 
   <script>
@@ -126,6 +94,33 @@
     margin-bottom: 10px;
     background-color: #f9f9f9;
   }
+
+  .div-reportes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Esto asegura que el div ocupe toda la altura de la pantalla */
+    max-width: 100%; /* El div ocupará el ancho máximo permitido */
+  }
+
+  /* Estilo para hacer el div responsive */
+  @media (max-width: 808px) {
+    /* Ajusta el ancho del div para dispositivos móviles */
+    .div-reportes {
+      max-width: 100%; /* Por ejemplo, el div ocupará el 80% del ancho en dispositivos móviles */
+    }
+  }
+
+  .div-botones{
+      display: flex-column;
+
+  justify-content: center;
+
+  }
+
+
+
+
 
   /* Puedes agregar más estilos según tus preferencias */
   </style>

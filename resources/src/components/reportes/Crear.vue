@@ -1,5 +1,5 @@
 <template>
-  <div class="div-reportes" >
+  <div class="div-reportes bg-blue-300" >
 
 <v-card color="#385F73" theme="light"    max-width="900px" class="mt-4 ">
     <v-card-title class="text-h5 font-weight-regular bg-blue-grey ">
@@ -27,14 +27,14 @@
         v-model="select"
         :items="items"
         :rules="[v => !!v || 'Item is required']"
-        label="Item"
+        label="Grado"
         required
       ></v-select>
 
       <v-checkbox
         v-model="checkbox"
         :rules="[v => !!v || 'You must agree to continue!']"
-        label="Do you agree?"
+        label="Requiere atencion"
         required
       ></v-checkbox>
 

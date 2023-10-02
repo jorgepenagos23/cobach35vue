@@ -10,16 +10,16 @@
 
         <body>
 
-            <v-container class="bg-blue-950	">
+            <v-container class="bg-sky-950	">
     <v-row justify="center">
-        <v-col cols="12" lg="8">
+        <v-col cols="12" lg="8" >
         <v-card color="#476270" theme="dark">
-          <div class="d-flex flex-no-wrap justify-space-between">
+          <div class="d-flex flex-no-wrap justify-space-between ">
             <div>
               <v-card-title class="text-h5">PUBLICACIONES</v-card-title>
               <v-card-subtitle>Manejador de Publicaciones</v-card-subtitle>
               <v-card-actions>
-                <button class="min-w-auto w-32 h-10 bg-sky-800 p-2 rounded-r-full hover:bg-green-500 text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
+                <button @click="$router.push('/editar-publicaciones')" class="min-w-auto w-32 h-10 bg-sky-800 p-2 rounded-r-full hover:bg-green-500 text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
                  ENTRAR
                 </button>              </v-card-actions>
             </div>
@@ -60,7 +60,7 @@
               <v-card-title class="text-h5">ALUMNOS</v-card-title>
               <v-card-subtitle>SISTEMA</v-card-subtitle>
               <v-card-actions>
-                <button class="min-w-auto w-32 h-10 bg-sky-800 p-2 rounded-r-full hover:bg-green-500 text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
+                <button @click="$router.push('/alumnos')" class="min-w-auto w-32 h-10 bg-sky-800 p-2 rounded-r-full hover:bg-green-500 text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
                  ENTRAR
                 </button>
               </v-card-actions>
@@ -117,7 +117,7 @@
               <v-card-title class="text-h5">SECCIONES</v-card-title>
               <v-card-subtitle>SISTEMA</v-card-subtitle>
               <v-card-actions>
-                <button class="min-w-auto w-32 h-10 bg-sky-800 p-2 rounded-r-full hover:bg-green-500 text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
+                <button @click="$router.push('/tabla-secciones')" class="min-w-auto w-32 h-10 bg-sky-800 p-2 rounded-r-full hover:bg-green-500 text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
                  ENTRAR
                 </button>
               </v-card-actions>
@@ -139,6 +139,38 @@
         </v-card>
       </v-col>
 
+      <v-col cols="12" lg="8">
+        <v-card color="#078559" theme="dark">
+          <div class="d-flex flex-no-wrap justify-space-between">
+            <div>
+              <v-card-title class="text-h5">SUBIR HOJAS DE EXCEL  ALUMNOS</v-card-title>
+              <v-card-subtitle>SISTEMA</v-card-subtitle>
+              <v-card-actions>
+                <button @click="subiralumno" class="min-w-auto w-32 h-10 bg-sky-800 p-2 rounded-r-full hover:bg-green-500 text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
+                 ENTRAR
+                </button>
+              </v-card-actions>
+            </div>
+            <v-avatar class="ma-5" size="125"  rounded="2">
+                <article class="relative w-full h-40 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out "
+            style="background-image: url('https://miro.medium.com/v2/resize:fit:720/format:webp/1*4nLaSMTo7mb66Vl6tlReTw.jpeg');">
+            <img class="absolute bottom-0 right-1 w-[4rem] h-[4rem] transition duration-300 group-hover:scale-[1.4]" src="https://www.agr.una.py/assets/images/iconos/bd.png" 	style=" z-index: -1;"		alt="" />
+
+            <div class="absolute inset-0 bg-white bg-opacity-10 group-hover:opacity-75 transition duration-300 ease-in-out">
+            </div>
+            <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+
+
+            </div>
+        </article>
+     </v-avatar>
+          </div>
+        </v-card>
+      </v-col>
+
+
+
+
     </v-row>
   </v-container>
 
@@ -147,71 +179,11 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4" style=" z-index: -1;">
 
-        <article class="relative w-full h-40 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 ease-in-out"
-            style="background-image: url('https://scontent-qro1-1.xx.fbcdn.net/v/t1.6435-9/118988297_924535877956405_7357496037096699677_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_ohc=PtFLKGCFv08AX994twK&_nc_ht=scontent-qro1-1.xx&oh=00_AfDpGJA3_oVykRab4e1FW8tgdW3-ezYLj_KizPW_BplE7A&oe=653054BA'); ">
-            <img class="absolute bottom-0 right-1 w-[4rem] h-[4rem] transition duration-300 group-hover:scale-[1.4]" src="https://www.agr.una.py/assets/images/iconos/estudiantes.png" 			alt="" />
 
-            <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out">
 
-            </div>
-            <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
 
-                <h3 class="text-center">
-                    <a class="text-white text-2xl font-bold text-center" href="#">
-                        <span class="absolute inset-0"></span>
-                        SECCIONES
-                        <div class="group relative flex cursor-pointer items-center">
-                            <button @click="subiralumno" class="text-white text-sm font-medium uppercase leading-6">ALUIMNOS</button>
-                        </div>
-                    </a>
 
-                </h3>
-            </div>
-        </article>
 
-        <article class="relative w-full h-40 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
-            style="background-image: url('https://insyde.org.mx/wp-content/uploads/2019/08/banner_publicaciones-1800x469.jpg');">
-            <img class="absolute bottom-0 right-1 w-[4rem] h-[4rem] transition duration-300 group-hover:scale-[1.4]" src="https://www.agr.una.py/assets/images/iconos/publicaciones.png" 			alt="" />
-
-            <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out">
-
-            </div>
-            <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
-
-                <h3 class="text-center">
-                    <a class="text-white text-2xl font-bold text-center" href="#">
-                        <span class="absolute inset-0"></span>
-                        Publicaciones
-                        <div class="group relative flex cursor-pointer items-center">
-                            <button @click="subiralumno" class="text-white text-sm font-medium uppercase leading-6">PUBLICACIONES</button>
-                        </div>
-                    </a>
-
-                </h3>
-            </div>
-        </article>
-
-        <article class="relative w-full h-40 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
-            style="background-image: url('https://calificacionessep.online/wp-content/uploads/2023/07/Calificaciones-de-preparatoria-SEP.jpg');">
-            <img class="absolute bottom-0 right-1 w-[4rem] h-[4rem] transition duration-300 group-hover:scale-[1.4]" src="https://www.agr.una.py/assets/images/iconos/encuestas.png" 			alt="" />
-
-            <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out">
-
-            </div>
-            <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
-
-                <h3 class="text-center">
-                    <a class="text-white text-2xl font-bold text-center" href="#">
-                        <span class="absolute inset-0"></span>
-                        Boletas
-                        <div class="group relative flex cursor-pointer items-center">
-                            <button @click="subiralumno" class="text-white text-sm font-medium uppercase leading-6">BOLETAS</button>
-                        </div>
-                    </a>
-
-                </h3>
-            </div>
-        </article>
 
 </div>
 
@@ -227,7 +199,6 @@
 import Swal from "sweetalert2";
 import navegacion from "../../../js/Componentes/navegacion.vue";
 import inicioVue from "../inicio.vue";
-import Editar from '.././reportes/Editar.vue';
 
 
 export default {
