@@ -46,20 +46,13 @@
 
   <script>
   import axios from 'axios';
-  import inicioVue from "../inicio.vue";
-  import banner from "../banner.vue";
+
 
   export default {
 
 
-    name: 'App',
-    components: {
-        inicioVue
-    },
 
-    components: {
-        banner,
-    },
+
     data() {
       return {
         secciones: [], // Inicializa con un array vacío

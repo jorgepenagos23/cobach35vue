@@ -2,9 +2,6 @@
 import { createApp } from 'vue';
 import App from '../src/components/App.vue';
 import dashboard from "../src/components/sistema/dashboard.vue";
-import secciones from "../src/secciones.vue";
-import MostrarSeccion from "../src/components/secciones/MostrarSeccion.vue";
-import MostrarPublicaciones from "../src/components/reportes/MostrarPublicaciones.vue";
 
 import 'vuetify/styles'
 
@@ -14,7 +11,8 @@ import * as directives from 'vuetify/directives'
 import './bootstrap';
 
 import navegacion from "./Componentes/navegacion.vue";
-import banner from '../src/components/banner.vue';
+import banner from "./Componentes/banner.vue";
+
 
 import Editar from '../src/components/reportes/Editar.vue';
 import Crear from '../src/components/reportes/Crear.vue';
@@ -87,6 +85,7 @@ app.use(vuetify)
 app.component('navegacion', navegacion);
 app.component('banner', banner);
 
+
 app.component('editar-reportes', Editar);
 app.component('crear-reportes', Crear);
 app.component('tabla-reportes', TablaReportes);
@@ -97,9 +96,9 @@ app.component('tabla-publicaciones', TablaPublicaciones);
 
 app.component('alumnos', Alumnos);
 app.component('tabla-alumnos', TablaAlumnos);
-
-
 app.component('tabla-secciones', TablaSecciones);
+
+
 
 
 app.mount('#app');

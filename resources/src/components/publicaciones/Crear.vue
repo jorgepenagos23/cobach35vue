@@ -1,9 +1,9 @@
 <template>
-
+<v-app>
     <div class="div-reportes bg-blue-100">
     <v-card color="#385F73" theme="light"    max-width="900px" class="mt-4 ">
     <v-theme-provider theme="dark" with-background class="pa-5">
-    <v-card title="Crear Publicaciones" subtitle="Subtitle"></v-card>
+    <v-card title="Crear Publicaciones" subtitle="Crear"></v-card>
   </v-theme-provider>
       <v-card-title class="text-h5 font-weight-regular bg-blue-grey ">
         </v-card-title>
@@ -21,17 +21,22 @@
           v-model="Matricula"
           :counter="10"
           :rules="nameRules"
-          label="Matricula"
+          label="Descripcion"
           required
         ></v-text-field>
+
+
+
 
         <v-select
           v-model="select"
           :items="items"
           :rules="[v => !!v || 'Item is required']"
-          label="Item"
+          label="Publicacion"
           required
         ></v-select>
+
+
 
         <v-checkbox
           v-model="checkbox"
@@ -40,13 +45,19 @@
           required
         ></v-checkbox>
 
+        <v-date-picker
+      v-model="fechaSeleccionada"
+      label="Seleccionar Fecha"
+      locale="es"
+    ></v-date-picker>
+
         <div class="div-botones">
           <v-btn color="success" class="mt-4" block @click="validate">
             Crear  publicacion
           </v-btn>
 
           <v-btn color="error" class="mt-4" block @click="reset">
-  Limpiar
+            Limpiar
           </v-btn>
 
         </div>
@@ -54,6 +65,7 @@
     </v-sheet>
    </v-card>
   </div>
+</v-app>
       </template>
 
   <style>

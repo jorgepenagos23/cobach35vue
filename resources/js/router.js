@@ -7,8 +7,9 @@ import MostrarPublicaciones from '../src/components/reportes/MostrarPublicacione
 
 import Login from '../src/components//sistema/login.vue'; // Ajusta la ubicación según la estructura de tu proyecto
 import navegacion from '../js/Componentes/navegacion.vue'; // Ajusta la ubicación según la estructura de tu proyecto
+import banner from '../js/Componentes/banner.vue'; // Ajusta la ubicación según la estructura de tu proyecto
+
 import dashboard from "../src/components/sistema/dashboard.vue";
-import banner from '../src/components/banner.vue';
 import "../css/dist/js/bootstrap.bundle";
 import "../css/dist/css/bootstrap.css";
 
@@ -16,6 +17,9 @@ import "../css/dist/css/bootstrap.css";
 import TablaReportes from '../src/components/reportes/TablaReportes.vue';
 import Crear from '../src/components/reportes/Crear.vue';
 import Editar from '../src/components/reportes/Editar.vue';
+
+
+
 
 import Alumnos from '../src/components/alumnos/MostrarAlumnos.vue'
 import TablaAlumnos from '../src/components/alumnos/TablaAlumnos.vue'
@@ -72,14 +76,16 @@ const routes = [
   {
     name: 'dashboard',
     path: '/dashboard',
-    component: dashboard
+    component: dashboard,
+
 
 
   },
+
   {
     name: 'banner',
     path: '/banner',
-    component: () => import('../src/components/banner.vue'),
+    component: banner,
 
 
   },
@@ -146,11 +152,26 @@ const routes = [
 
   },
 
+
+  {
+    name:'IndexAlumno',
+    path: '/index-alumno',
+    component: () => import('../src/components/usuarios/VistaAlumno.vue'),
+
+  },
+
+
+
+
+
 ];
+
 
 const router = createRouter({
   history: createWebHistory(),
   routes
 });
+
+
 
 export default router;

@@ -1,4 +1,5 @@
 <template>
+
     <v-card
       class="mx-auto"
 
@@ -15,6 +16,13 @@
 
       <v-divider></v-divider>
 
+      <v-container class="text-center">
+          <v-autocomplete
+                  label="Buscar publicacion"
+                  theme="dark"
+                  :items="['Publicacion']"
+                  ></v-autocomplete>
+             </v-container>
       <v-virtual-scroll
         :items="items"
         height="320"

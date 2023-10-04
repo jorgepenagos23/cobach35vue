@@ -3,7 +3,7 @@
       <v-layout>
         <!-- Barra de navegación -->
         <v-navigation-drawer
-          color="#0d153b"
+          color="#226f54"
           expand-on-hover
           rail
           style="position: fixed; z-index: 4;"
@@ -25,6 +25,9 @@
             <v-list-item prepend-icon="mdi-star" title="Configuracion " value="starred"></v-list-item>
             <v-list-item prepend-icon="mdi-star" title="Modo Dark" @click="toggleTheme"></v-list-item>
             <v-list-item prepend-icon="mdi-star" title="Salir" @click="logout"></v-list-item>
+            <v-list-item prepend-icon="mdi-star" title=" Vista Alumno " @click="$router.push('/index-alumno')"></v-list-item>
+            <v-list-item prepend-icon="mdi-star" title=" banner " @click="$router.push('/banner')"></v-list-item>
+
           </v-list>
         </v-navigation-drawer>
 

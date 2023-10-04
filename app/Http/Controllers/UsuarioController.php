@@ -19,16 +19,16 @@ class UsuarioController extends Controller
         $credentials = $request->only('correo',  'password');
 
         if (Auth::guard('web')->attempt($credentials)) {
-            // Autenticación exitosa para el cliente
+            // Autenticación exitosa para  usuario
             return response()->json([
                 'message' => 'Inicio de sesión exitoso',
                 'redirect' => route('dashboard'), ], 200);
 
-
-
         }
         // Credenciales inválidas
         return response()->json(['message' => 'Credenciales inválidas'], 401);
+
+
     }
 
 

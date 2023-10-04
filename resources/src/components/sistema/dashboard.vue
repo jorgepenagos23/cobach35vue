@@ -3,17 +3,15 @@
 
   <header>
 
-    <inicioVue> </inicioVue>
-
-        </header>
+    </header>
      <navegacion> </navegacion>
 
         <body>
 
-            <v-container class="bg-sky-950	">
+            <v-container class="bg-gradient-to-r from-green-400 to-blue-500	">
     <v-row justify="center">
         <v-col cols="12" lg="8" >
-        <v-card color="#476270" theme="dark">
+        <v-card color="#0d1b2a" theme="dark">
           <div class="d-flex flex-no-wrap justify-space-between ">
             <div>
               <v-card-title class="text-h5">PUBLICACIONES</v-card-title>
@@ -32,7 +30,7 @@
 
 
       <v-col cols="12" lg="8">
-        <v-card color="#770B2A" theme="dark">
+        <v-card color="#1b263b" theme="dark">
           <div class="d-flex flex-no-wrap justify-space-between">
             <div>
               <v-card-title class="text-h5">REPORTES</v-card-title>
@@ -54,7 +52,7 @@
       </v-col>
 
       <v-col cols="12" lg="8">
-        <v-card color="#256325" theme="dark">
+        <v-card color="#415a77" theme="dark">
           <div class="d-flex flex-no-wrap justify-space-between">
             <div>
               <v-card-title class="text-h5">ALUMNOS</v-card-title>
@@ -82,7 +80,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" lg="8">
-        <v-card color="#0B1877" theme="dark">
+        <v-card color="#778da9" theme="dark">
           <div class="d-flex flex-no-wrap justify-space-between">
             <div>
               <v-card-title class="text-h5">BOLETAS</v-card-title>
@@ -111,7 +109,7 @@
       </v-col>
 
       <v-col cols="12" lg="8">
-        <v-card color="#078559" theme="dark">
+        <v-card color="#e0e1dd" theme="dark">
           <div class="d-flex flex-no-wrap justify-space-between">
             <div>
               <v-card-title class="text-h5">SECCIONES</v-card-title>
@@ -171,23 +169,15 @@
 
 
 
+
     </v-row>
   </v-container>
 
 
-    <div class="h-full ml-14 mt-14 mb-10 md:ml-64 bg-sky-800 " style=" z-index: -1;">
+ <div class="h-full ml-14 mt-14 mb-10 md:ml-64 bg-sky-800 " style=" z-index: -1;">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4" style=" z-index: -1;">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4" style=" z-index: -1;">
 
-
-
-
-
-
-
-</div>
-
-<div class="grid grid-cols-1 lg:grid-cols-2 p-4 gap-4">
 </div>
 </div>
 
@@ -204,8 +194,8 @@ import inicioVue from "../inicio.vue";
 export default {
 
 
-
   methods: {
+
     logout() {
       axios.post('/logout')
         .then(response => {
